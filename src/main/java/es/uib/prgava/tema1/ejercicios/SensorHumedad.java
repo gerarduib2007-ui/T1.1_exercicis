@@ -13,12 +13,12 @@ public final class SensorHumedad extends Sensor {
     @Override
     public double leer() {
         // TODO 1.1.6
-        throw new UnsupportedOperationException("TODO 1.1.6: SensorHumedad.leer");
+        return porcentaje;
     }
 
     @Override
     protected String magnitud() {
         // TODO 1.1.6: "humedad"
-        throw new UnsupportedOperationException("TODO 1.1.6: SensorHumedad.magnitud");
+        return "humedad";
     }
 }

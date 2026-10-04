@@ -16,24 +16,26 @@ public final class PanelDeEstado {
 
     public void registrar(String evento) {
         // TODO 1.1.5: cuenta y delega en el objeto interno.
-        throw new UnsupportedOperationException("TODO 1.1.5: PanelDeEstado.registrar");
+        registrados ++;
+        interno.registrar(evento);
     }
 
     /** Ojo: tiene que llamar a <em>tu</em> registrar, no al del objeto interno. */
     public void registrarVarios(String... eventos) {
-        // TODO 1.1.5
-        throw new UnsupportedOperationException("TODO 1.1.5: PanelDeEstado.registrarVarios");
+        for (String evento : eventos) {
+            registrar(evento);
+        }
     }
 
     public int registrados() {
         // TODO 1.1.5
-        throw new UnsupportedOperationException("TODO 1.1.5: PanelDeEstado.registrados");
-    }
+        return registrados;
+        }
 
     /** Por ejemplo {@code 3 eventos registrados}. */
     public String resumen() {
         // TODO 1.1.5
-        throw new UnsupportedOperationException("TODO 1.1.5: PanelDeEstado.resumen");
+        return registrados + " eventos registrados";
     }
 
     // TODO 1.1.5: no añadas métodos que RegistroEventos ofrezca y que el panel no necesite.

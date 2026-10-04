@@ -25,12 +25,11 @@ public abstract class Sensor {
 
     /**
      * Por ejemplo {@code temperatura en sala-3: 21.5}.
-     *
      * <p>Se escribe una sola vez, aquí, y llama a {@link #leer()} aunque leer() no tenga cuerpo
      * en esta clase.
      */
     public String describir() {
         // TODO 1.1.6
-        throw new UnsupportedOperationException("TODO 1.1.6: Sensor.describir");
+        return magnitud() + " en " + ubicacion() +": " + leer();
     }
 }

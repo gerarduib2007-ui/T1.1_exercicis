@@ -18,6 +18,6 @@ public interface Identificable {
      */
     default String etiqueta() {
         // TODO 1.1.7
-        throw new UnsupportedOperationException("TODO 1.1.7: Identificable.etiqueta");
+       return"[" + identificador() + "]";
     }
 }

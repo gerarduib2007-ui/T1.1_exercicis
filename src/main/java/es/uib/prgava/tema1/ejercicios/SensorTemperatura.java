@@ -14,15 +14,15 @@ public final class SensorTemperatura extends Sensor {
     @Override
     public double leer() {
         // TODO 1.1.6
-        throw new UnsupportedOperationException("TODO 1.1.6: SensorTemperatura.leer");
+        return grados;
     }
 
     @Override
     protected String magnitud() {
         // TODO 1.1.6: "temperatura"
-        throw new UnsupportedOperationException("TODO 1.1.6: SensorTemperatura.magnitud");
+        return "temperatura";
     }
 
     // TODO 1.1.6: escribe aquí, comentada, la línea new Sensor("sala-3") y anota qué dice
-    // el compilador.
+    // new Sensor("sala-3") no se puede pq la clase es abstracta
 }

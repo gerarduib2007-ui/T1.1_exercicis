@@ -7,7 +7,7 @@ package es.uib.prgava.tema1.ejercicios;
  * es {@code DispositivoRed}. Fíjate en que no hay ni debe haber un método para cambiar el
  * nombre.
  */
-public class Servidor {
+public class Servidor implements Identificable {
 
     // TODO 1.1.2: declara aquí el atributo de clase que cuenta los servidores creados.
 
@@ -28,7 +28,10 @@ public class Servidor {
         this.enMantenimiento = false;
         totalServidorsCreats++;
     }
-
+@Override
+public String identificador(){
+        return nombre;
+}
     /** Método de clase: cuántos servidores se han construido desde que arrancó el programa. */
     public static int servidoresCreados() {
         // TODO 1.1.2
@@ -63,6 +66,6 @@ public class Servidor {
         }else {
             return nombre + " (operativo)";
         }
-
     }
+
 }
