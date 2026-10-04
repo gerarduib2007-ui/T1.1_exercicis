@@ -1,6 +1,6 @@
 // Etiqueta.java
 package es.uib.prgava.tema1.ejercicios;
-
+import java.util.Objects;
 public class Etiqueta {
 
     private final String texto;
@@ -17,10 +17,15 @@ public class Etiqueta {
 
     @Override
     public boolean equals(Object otro) {
-        Etiqueta esa = (Etiqueta) otro;
-        return texto.equals(esa.texto) && color.equals(esa.color);
+        if(this == otro)return true;
+        if (!(otro instanceof Etiqueta esa)) return false;
+        return Objects.equals(texto, esa.texto) && color.equals(esa.color);
     }
 
+    @Override
+    public int hashCode(){
+        return Objects.hash(texto,color);
+    }
     @Override
     public String toString() {
         return "Etiqueta[" + texto + ", " + color + "]";

@@ -13,47 +13,56 @@ public class Servidor {
 
     private final String nombre;
     private boolean enMantenimiento;
-
+    private static int totalServidorsCreats;
     /**
      * Un servidor nace fuera de mantenimiento.
      *
      * @throws IllegalArgumentException si el nombre es {@code null} o está en blanco
      */
     public Servidor(String nombre) {
-        // TODO 1.1.2: valida el nombre, inicializa el estado e incrementa el contador.
-        throw new UnsupportedOperationException("TODO 1.1.2: constructor de Servidor");
+        if (nombre == null || nombre.isBlank()) {
+            // TODO 1.1.2: valida el nombre, inicializa el estado e incrementa el contador.
+            throw new IllegalArgumentException("El nombre del servidor no puede estar vacío o ser nulo");
+        }
+        this.nombre = nombre;
+        this.enMantenimiento = false;
+        totalServidorsCreats++;
     }
 
     /** Método de clase: cuántos servidores se han construido desde que arrancó el programa. */
     public static int servidoresCreados() {
         // TODO 1.1.2
-        throw new UnsupportedOperationException("TODO 1.1.2: Servidor.servidoresCreados");
+        return totalServidorsCreats;
     }
 
     public void entrarEnMantenimiento() {
         // TODO 1.1.2
-        throw new UnsupportedOperationException("TODO 1.1.2: Servidor.entrarEnMantenimiento");
+        enMantenimiento= true;
     }
 
     public void salirDeMantenimiento() {
         // TODO 1.1.2
-        throw new UnsupportedOperationException("TODO 1.1.2: Servidor.salirDeMantenimiento");
+        enMantenimiento = false;
     }
 
     public String nombre() {
         // TODO 1.1.2
-        throw new UnsupportedOperationException("TODO 1.1.2: Servidor.nombre");
+        return nombre;
     }
 
     public boolean estaEnMantenimiento() {
-        // TODO 1.1.2
-        throw new UnsupportedOperationException("TODO 1.1.2: Servidor.estaEnMantenimiento");
+        return enMantenimiento;
     }
 
     /** Por ejemplo {@code web01 (operativo)} o {@code web01 (en mantenimiento)}. */
     @Override
     public String toString() {
         // TODO 1.1.2
-        throw new UnsupportedOperationException("TODO 1.1.2: Servidor.toString");
+        if (enMantenimiento){
+            return nombre + " (en mantenimiento)";
+        }else {
+            return nombre + " (operativo)";
+        }
+
     }
 }
